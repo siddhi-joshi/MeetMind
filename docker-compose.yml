@@ -1,0 +1,16 @@
+services:
+  meetmind:
+    build: .
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    volumes:
+      - ./data:/app/data
+      - ./uploads:/app/uploads
+      - ./generated:/app/generated
+      - model-cache:/root/.cache
+
+volumes:
+  model-cache:
+
